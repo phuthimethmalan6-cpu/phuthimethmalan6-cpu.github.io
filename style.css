@@ -1,0 +1,65 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background: #000;
+    color: white;
+    overflow: hidden;
+}
+
+#welcome-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #0a192f 0%, #020b1a 100%);
+    z-index: 1000;
+    transition: all 1.2s ease;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 3.5rem 2.5rem;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.button-group { margin-top: 2rem; display: flex; gap: 15px; justify-content: center; }
+
+.btn { padding: 12px 35px; border: none; border-radius: 50px; cursor: pointer; transition: 0.3s; font-family: 'Prompt'; }
+
+.primary { background: #0077ff; color: white; box-shadow: 0 5px 15px rgba(0, 119, 255, 0.3); }
+
+.secondary { background: rgba(255, 255, 255, 0.1); color: white; }
+
+#main-content { width: 100%; height: 100vh; opacity: 0; transition: opacity 2s ease; position: relative; }
+
+#main-content.show { opacity: 1; }
+
+.hidden { display: none; }
+
+.photo-frame {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 200px;
+    padding: 10px 10px 30px 10px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    transform: rotate(8deg);
+    border-radius: 2px;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.photo-frame img { width: 100%; height: auto; }
+
+.photo-frame:hover { transform: rotate(0deg) scale(1.1); z-index: 100; }
+
+.overlay-text { position: absolute; bottom: 8%; width: 100%; text-align: center; pointer-events: none; }
+
+.overlay-text h2 { font-style: italic; font-weight: 300; text-shadow: 0 0 20px rgba(0, 119, 255, 0.8); }
