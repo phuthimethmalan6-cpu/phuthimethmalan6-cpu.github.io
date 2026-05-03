@@ -9,80 +9,65 @@ body {
 
 #welcome-screen {
     position: fixed;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle, #0a192f 0%, #020b1a 100%);
+    width: 100%; height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    background: radial-gradient(circle, #1a0505 0%, #000000 100%);
     z-index: 1000;
     transition: 1s ease;
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);
-    padding: 2rem;
-    border-radius: 25px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 90%;
-    max-width: 320px;
+    padding: 2rem; border-radius: 25px;
+    text-align: center; border: 1px solid rgba(255, 0, 0, 0.2);
+    width: 85%; max-width: 300px;
 }
 
-/* ปรับรูปให้เล็ก */
+/* ปรับขนาดรูปภาพให้เล็กและอยู่ในกรอบ */
 .photo-container {
     margin-bottom: 15px;
-}
-
-.small-photo {
-    width: 120px; /* ขนาดรูปเล็กลงตามขอ */
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-h1 { font-size: 1.2rem; margin-bottom: 5px; }
-p { font-size: 0.8rem; opacity: 0.7; margin-bottom: 20px; }
-
-/* กรอบล้อมรอบปุ่ม */
-.button-border-box {
-    border: 1px solid rgba(0, 119, 255, 0.5);
-    padding: 15px;
-    border-radius: 20px;
-    background: rgba(0, 119, 255, 0.05);
-}
-
-.button-group {
     display: flex;
-    gap: 10px;
     justify-content: center;
 }
 
+.small-photo {
+    width: 100px; /* ขนาดเล็กลงตามที่ขอ */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+h1 { font-size: 1.1rem; margin-bottom: 5px; color: #ff4d4d; }
+p { font-size: 0.75rem; opacity: 0.7; margin-bottom: 15px; }
+
+/* กรอบล้อมรอบปุ่ม */
+.button-border-box {
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    padding: 12px; border-radius: 18px;
+    background: rgba(255, 0, 0, 0.05);
+}
+
+.button-group { display: flex; gap: 10px; justify-content: center; }
+
 .btn {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: 'Prompt';
-    font-size: 0.9rem;
+    padding: 8px 20px; border: none; border-radius: 50px;
+    cursor: pointer; font-family: 'Prompt'; font-size: 0.85rem;
     transition: 0.3s;
 }
 
-.primary { background: #0077ff; color: white; }
+.primary { background: #ff0000; color: white; box-shadow: 0 0 10px rgba(255,0,0,0.5); }
 .secondary { background: rgba(255, 255, 255, 0.1); color: white; }
 
-/* หน้าหลัก */
-#main-content { width: 100%; height: 100vh; position: relative; display: none; }
+#main-content { width: 100%; height: 100vh; display: none; }
 #main-content.show { display: block; }
 
 .overlay-text {
-    position: absolute;
-    bottom: 10%;
-    width: 100%;
-    text-align: center;
-    pointer-events: none;
+    position: absolute; bottom: 8%; width: 100%;
+    text-align: center; pointer-events: none;
 }
+.overlay-text h2 { color: #ff4d4d; letter-spacing: 2px; font-weight: 300; font-size: 1rem; }
 
 .hidden { display: none; }
