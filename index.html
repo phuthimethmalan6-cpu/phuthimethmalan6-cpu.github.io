@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Special One</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.93/build/spline-viewer.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 </head>
 <body>
 
     <div id="welcome-screen">
         <div class="glass-card">
             <div class="photo-container">
-                <img src="memory.jpg" alt="Our Memory" class="main-photo">
+                <img src="memory.jpg" alt="Our Memory" class="small-photo">
             </div>
 
             <h1>สิ่งที่เป็นไปไม่ได้...</h1>
             <p>แต่ตอนนี้มันอยู่ตรงหน้าคุณแล้ว</p>
             
-            <div class="button-group">
-                <button id="btn-open" class="btn primary">Open</button>
-                <button id="btn-close" class="btn secondary">Close</button>
+            <div class="button-border-box">
+                <div class="button-group">
+                    <button id="btn-open" class="btn primary">Open</button>
+                    <button id="btn-close" class="btn secondary">Close</button>
+                </div>
             </div>
         </div>
     </div>
 
     <div id="main-content" class="hidden">
-        <spline-viewer url="https://prod.spline.design/9M2jS7vI6V5k9Z5C/scene.splinecode"></spline-viewer>
+        <div id="canvas-container"></div>
         <div class="overlay-text">
-            <h2>You are my impossible dream come true.</h2>
-            <p>ลองใช้นิ้วหมุนดอกไม้ดูนะ...</p>
+            <h2>You are my everything.</h2>
         </div>
     </div>
 
