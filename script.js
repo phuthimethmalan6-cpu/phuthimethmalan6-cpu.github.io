@@ -12,30 +12,6 @@ loader.classList.add("hide");
 
 });
 
-// REVEAL
-
-const cards = document.querySelectorAll(".card");
-
-function reveal(){
-
-cards.forEach(card=>{
-
-const top = card.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100){
-
-card.classList.add("show");
-
-}
-
-});
-
-}
-
-window.addEventListener("scroll",reveal);
-
-reveal();
-
 // CURSOR
 
 const glow = document.querySelector(".cursor-glow");
@@ -88,3 +64,35 @@ particle.style.height =
 particles.appendChild(particle);
 
 }
+
+// ACCORDION
+
+const accordions =
+document.querySelectorAll(".accordion");
+
+accordions.forEach(acc => {
+
+acc.addEventListener("click",()=>{
+
+const panel = acc.nextElementSibling;
+
+const icon = acc.querySelector("span");
+
+if(panel.style.maxHeight){
+
+panel.style.maxHeight = null;
+
+icon.innerHTML = "+";
+
+}else{
+
+panel.style.maxHeight =
+panel.scrollHeight + "px";
+
+icon.innerHTML = "−";
+
+}
+
+});
+
+});
