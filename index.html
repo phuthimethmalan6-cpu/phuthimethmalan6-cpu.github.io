@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 
 <meta charset="UTF-8">
@@ -15,9 +16,13 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 </head>
 
 <body>
+
+<div id="three-container"></div>
 
 <canvas id="matrix"></canvas>
 
@@ -34,10 +39,22 @@
 <div class="particles"></div>
 
 <div class="progress-container">
+
 <div class="progress-bar"></div>
+
 </div>
 
 <button id="themeToggle">🌙</button>
+
+<div class="ai-box">
+
+<h3>AI SCIENCE ASSISTANT</h3>
+
+<p id="ai-text">
+กำลังวิเคราะห์ข้อมูลผิวหนัง...
+</p>
+
+</div>
 
 <nav>
 
@@ -78,18 +95,11 @@
 <div class="hero-buttons">
 
 <a href="#accordion" class="btn">
-
 เริ่มสำรวจ
-
 </a>
 
-<a 
-href="https://www.instagram.com/ameuvish?igsh=MWlheHRsNWNxbDNzcA==" 
-target="_blank"
-class="ig-btn">
-
+<a href="https://www.instagram.com/ameuvish?igsh=MWlheHRsNWNxbDNzcA==" target="_blank" class="ig-btn">
 Instagram ผู้จัดทำ
-
 </a>
 
 </div>
@@ -101,10 +111,24 @@ Instagram ผู้จัดทำ
 <section class="accordion-section" id="accordion">
 
 <h1 class="main-title">
-
 โครงสร้างของผิวหนัง
-
 </h1>
+
+<div class="skin-diagram">
+
+<div class="layer epidermis">
+Epidermis
+</div>
+
+<div class="layer dermis">
+Dermis
+</div>
+
+<div class="layer hypodermis">
+Hypodermis
+</div>
+
+</div>
 
 <div class="accordion-item tilt" data-aos="fade-up">
 
@@ -234,22 +258,12 @@ Instagram ผู้จัดทำ
 
 <h2>SCIENCE SKIN</h2>
 
-<p>
+<p>นาย ธันวา ดวงไชย</p>
 
-นาย ธันวา ดวงไชย
-
-</p>
-
-<p>
-
-ชั้นมัธยมศึกษาปีที่ 4/10 เลขที่ 3
-
-</p>
+<p>ชั้นมัธยมศึกษาปีที่ 4/10 เลขที่ 3</p>
 
 <p class="foot">
-
 © 2026 SCIENCE SKIN WEBSITE
-
 </p>
 
 </footer>
