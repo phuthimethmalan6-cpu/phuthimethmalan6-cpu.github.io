@@ -1,43 +1,227 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Special One</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SCIENCE SKIN</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <div id="welcome-screen">
-        <div class="glass-card">
-            <div class="photo-container">
-                <img src="memory.jpg" alt="Our Memory" class="small-photo">
-            </div>
+<!-- LOADER -->
 
-            <h1>สิ่งที่เป็นไปไม่ได้...</h1>
-            <p>แต่ตอนนี้มันอยู่ตรงหน้าคุณแล้ว</p>
-            
-            <div class="button-border-box">
-                <div class="button-group">
-                    <button id="btn-open" class="btn primary">Open</button>
-                    <button id="btn-close" class="btn secondary">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="loader">
 
-    <div id="main-content" class="hidden">
-        <div class="overlay-text">
-            <h2>I LOVE YOU</h2>
-        </div>
-    </div>
+<div class="dna-loader"></div>
 
-    <audio id="myAudio" loop>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
+<h1>SCIENCE SKIN</h1>
 
-    <script src="script.js"></script>
+</div>
+
+<!-- CURSOR -->
+
+<div class="cursor-glow"></div>
+
+<!-- PARTICLES -->
+
+<div class="particles"></div>
+
+<!-- DNA -->
+
+<div class="dna-bg">
+
+<div class="dna-line"><span></span><span></span></div>
+<div class="dna-line"><span></span><span></span></div>
+<div class="dna-line"><span></span><span></span></div>
+<div class="dna-line"><span></span><span></span></div>
+<div class="dna-line"><span></span><span></span></div>
+<div class="dna-line"><span></span><span></span></div>
+<div class="dna-line"><span></span><span></span></div>
+<div class="dna-line"><span></span><span></span></div>
+
+</div>
+
+<!-- PROGRESS -->
+
+<div class="progress-container">
+<div class="progress-bar"></div>
+</div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>SCIENCE SKIN</h2>
+
+<ul>
+
+<li><a href="#epidermis">หนังกำพร้า</a></li>
+<li><a href="#dermis">หนังแท้</a></li>
+<li><a href="#organs">อวัยวะ</a></li>
+<li><a href="#care">บำรุงผิว</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+ผิวหนัง เกราะป้องกันของร่างกาย
+</h1>
+
+<p>
+ผิวหนังให้แข็งแรง เริ่มต้นที่ตัวเรา
+</p>
+
+<a href="#epidermis" class="btn">
+เริ่มสำรวจ
+</a>
+
+</div>
+
+</section>
+
+<!-- SECTION 1 -->
+
+<section id="epidermis">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1614851099511-773084f6911d?q=80&w=2070&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>1. หนังกำพร้า</h2>
+
+<h3>Epidermis</h3>
+
+<p>
+เป็นชั้นผิวด้านนอกสุด
+ช่วยป้องกันเชื้อโรค ฝุ่น และรังสี UV
+รวมถึงช่วยลดการสูญเสียน้ำจากร่างกาย
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SECTION 2 -->
+
+<section id="dermis">
+
+<div class="card reverse">
+
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>2. หนังแท้</h2>
+
+<h3>Dermis</h3>
+
+<p>
+เป็นชั้นที่มีเส้นเลือด เส้นประสาท
+ต่อมเหงื่อ และคอลลาเจน
+ช่วยให้ผิวหนังแข็งแรงและยืดหยุ่น
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SECTION 3 -->
+
+<section id="organs">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1578496479763-c21c718af028?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>3. อวัยวะที่เกี่ยวข้องกับผิวหนัง</h2>
+
+<h3>Skin Appendages</h3>
+
+<p>
+ประกอบด้วย เส้นผม เล็บ
+ต่อมเหงื่อ และต่อมไขมัน
+ซึ่งช่วยรักษาสมดุลของร่างกาย
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SECTION 4 -->
+
+<section id="care">
+
+<div class="card reverse">
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1887&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>4. การบำรุงผิวหนัง</h2>
+
+<h3>Skin Care</h3>
+
+<p>
+ควรดื่มน้ำให้เพียงพอ
+พักผ่อนให้เหมาะสม
+ทาครีมกันแดด และรับประทานอาหารที่มีประโยชน์
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>ผู้จัดทำ</h2>
+
+<p>
+นาย ธันวา ดวงไชย
+</p>
+
+<p>
+ชั้นมัธยมศึกษาปีที่ 4/10 เลขที่ 3
+</p>
+
+<a href="https://www.instagram.com/ameuvish?igsh=MWlheHRsNWNxbDNzcA==" target="_blank" class="ig-btn">
+Instagram ผู้จัดทำ
+</a>
+
+<p class="foot">
+© 2026 SCIENCE SKIN WEBSITE
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
