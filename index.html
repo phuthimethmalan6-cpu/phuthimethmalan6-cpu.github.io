@@ -11,11 +11,15 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
 </head>
 
 <body>
 
-<!-- LOADER -->
+<canvas id="matrix"></canvas>
 
 <div class="loader">
 
@@ -25,36 +29,15 @@
 
 </div>
 
-<!-- CURSOR -->
-
 <div class="cursor-glow"></div>
 
-<!-- PARTICLES -->
-
 <div class="particles"></div>
-
-<!-- DNA -->
-
-<div class="dna-bg">
-
-<div class="dna-line"><span></span><span></span></div>
-<div class="dna-line"><span></span><span></span></div>
-<div class="dna-line"><span></span><span></span></div>
-<div class="dna-line"><span></span><span></span></div>
-<div class="dna-line"><span></span><span></span></div>
-<div class="dna-line"><span></span><span></span></div>
-<div class="dna-line"><span></span><span></span></div>
-<div class="dna-line"><span></span><span></span></div>
-
-</div>
-
-<!-- PROGRESS -->
 
 <div class="progress-container">
 <div class="progress-bar"></div>
 </div>
 
-<!-- NAV -->
+<button id="themeToggle">🌙</button>
 
 <nav>
 
@@ -63,13 +46,12 @@
 <ul>
 
 <li><a href="#accordion">เนื้อหา</a></li>
+
 <li><a href="#footer">ผู้จัดทำ</a></li>
 
 </ul>
 
 </nav>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -79,29 +61,52 @@
 ผิวหนัง เกราะป้องกันของร่างกาย
 </h1>
 
-<p>
-ผิวหนังให้แข็งแรง เริ่มต้นที่ตัวเรา
+<h2>
+ผิวหนังแข็งแรง เริ่มต้นที่ตัวเรา
+</h2>
+
+<p class="creator">
+
+จัดทำโดย<br>
+
+นาย ธันวา ดวงไชย<br>
+
+ชั้นมัธยมศึกษาปีที่ 4/10 เลขที่ 3
+
 </p>
 
+<div class="hero-buttons">
+
 <a href="#accordion" class="btn">
+
 เริ่มสำรวจ
+
 </a>
+
+<a 
+href="https://www.instagram.com/ameuvish?igsh=MWlheHRsNWNxbDNzcA==" 
+target="_blank"
+class="ig-btn">
+
+Instagram ผู้จัดทำ
+
+</a>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- ACCORDION -->
-
 <section class="accordion-section" id="accordion">
 
 <h1 class="main-title">
+
 โครงสร้างของผิวหนัง
+
 </h1>
 
-<!-- ITEM 1 -->
-
-<div class="accordion-item">
+<div class="accordion-item tilt" data-aos="fade-up">
 
 <button class="accordion">
 
@@ -119,18 +124,13 @@
 
 หนังกำพร้า (Epidermis)
 เป็นชั้นผิวหนังด้านนอกสุดของร่างกาย
-ทำหน้าที่เป็นเกราะป้องกันอันตรายจากสิ่งแวดล้อม
-เช่น เชื้อโรค ฝุ่นละออง สารเคมี
-และรังสีอัลตราไวโอเลตจากแสงแดด
+ทำหน้าที่ป้องกันเชื้อโรค ฝุ่นละออง
+สารเคมี และรังสี UV จากแสงแดด
 
-ภายในชั้นหนังกำพร้ามีเซลล์เมลาโนไซต์
+ภายในมีเซลล์เมลาโนไซต์
 (Melanocytes)
-ซึ่งทำหน้าที่สร้างเมลานิน (Melanin)
-ช่วยกำหนดสีผิวและป้องกันรังสี UV
-
-นอกจากนี้ยังมีการผลัดเซลล์ผิวอยู่ตลอดเวลา
-เพื่อสร้างเซลล์ใหม่ทดแทนเซลล์เก่าที่เสื่อมสภาพ
-ทำให้ผิวแข็งแรงและสามารถป้องกันร่างกายได้ดี
+สร้างเมลานินเพื่อช่วยป้องกันรังสี UV
+และกำหนดสีผิวของมนุษย์
 
 </p>
 
@@ -138,9 +138,7 @@
 
 </div>
 
-<!-- ITEM 2 -->
-
-<div class="accordion-item">
+<div class="accordion-item tilt" data-aos="fade-up">
 
 <button class="accordion">
 
@@ -157,17 +155,12 @@
 <p>
 
 หนังแท้ (Dermis)
-เป็นชั้นผิวหนังที่อยู่ใต้หนังกำพร้า
+เป็นชั้นที่อยู่ใต้หนังกำพร้า
 ประกอบด้วยเส้นเลือด เส้นประสาท
-ต่อมเหงื่อ ต่อมไขมัน
-รวมถึงเส้นใยคอลลาเจนและอิลาสติน
+ต่อมเหงื่อ และคอลลาเจน
 
-คอลลาเจนช่วยให้ผิวแข็งแรง
-ส่วนอิลาสตินช่วยให้ผิวยืดหยุ่นและคืนรูปได้ดี
-
-ชั้นหนังแท้ยังช่วยรับความรู้สึกต่าง ๆ
-เช่น ความร้อน ความเย็น ความเจ็บปวด
-และการสัมผัส
+ช่วยให้ผิวแข็งแรง ยืดหยุ่น
+และสามารถรับความรู้สึกต่าง ๆ ได้
 
 </p>
 
@@ -175,9 +168,7 @@
 
 </div>
 
-<!-- ITEM 3 -->
-
-<div class="accordion-item">
+<div class="accordion-item tilt" data-aos="fade-up">
 
 <button class="accordion">
 
@@ -198,14 +189,8 @@
 ได้แก่ เส้นผม เล็บ ต่อมเหงื่อ
 และต่อมไขมัน
 
-เส้นผมช่วยป้องกันความร้อน
-และสิ่งแปลกปลอมจากภายนอก
-
-เล็บช่วยป้องกันปลายนิ้ว
-และช่วยในการหยิบจับสิ่งของ
-
-ต่อมเหงื่อช่วยควบคุมอุณหภูมิร่างกาย
-โดยการขับเหงื่อออกมา
+ช่วยควบคุมอุณหภูมิร่างกาย
+และรักษาความชุ่มชื้นของผิวหนัง
 
 </p>
 
@@ -213,9 +198,7 @@
 
 </div>
 
-<!-- ITEM 4 -->
-
-<div class="accordion-item">
+<div class="accordion-item tilt" data-aos="fade-up">
 
 <button class="accordion">
 
@@ -231,17 +214,13 @@
 
 <p>
 
-การบำรุงผิวหนังเป็นสิ่งสำคัญ
-ที่ช่วยให้ผิวแข็งแรงและมีสุขภาพดี
-
 ควรดื่มน้ำให้เพียงพอ
-รับประทานอาหารที่มีประโยชน์
 พักผ่อนให้เพียงพอ
+รับประทานอาหารที่มีประโยชน์
 และทาครีมกันแดดทุกครั้งก่อนออกจากบ้าน
 
-การดูแลผิวอย่างเหมาะสม
-จะช่วยลดปัญหาผิว
-เช่น สิว ฝ้า กระ และริ้วรอยก่อนวัย
+เพื่อช่วยให้ผิวแข็งแรง
+และลดปัญหาผิวหนังต่าง ๆ
 
 </p>
 
@@ -251,29 +230,31 @@
 
 </section>
 
-<!-- FOOTER -->
-
 <footer id="footer">
 
-<h2>ผู้จัดทำ</h2>
+<h2>SCIENCE SKIN</h2>
 
 <p>
+
 นาย ธันวา ดวงไชย
+
 </p>
 
 <p>
-ชั้นมัธยมศึกษาปีที่ 4/10 เลขที่ 3
-</p>
 
-<a href="https://www.instagram.com/ameuvish?igsh=MWlheHRsNWNxbDNzcA==" target="_blank" class="ig-btn">
-Instagram ผู้จัดทำ
-</a>
+ชั้นมัธยมศึกษาปีที่ 4/10 เลขที่ 3
+
+</p>
 
 <p class="foot">
+
 © 2026 SCIENCE SKIN WEBSITE
+
 </p>
 
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script src="script.js"></script>
 
