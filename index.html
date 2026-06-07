@@ -3,43 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>จดหมายจากคนคนนึง</title>
+<title>💌 จดหมายจากคนคนนึง</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="petals" id="petals"></div>
+<div class="glow"></div>
 
-<div class="card">
+<div id="hearts"></div>
 
-<div class="rose">🌹</div>
+<div class="envelope" id="envelope">
 
-<h1>จดหมายจากคนคนนึง</h1>
+    <div class="flap"></div>
 
-<p>
-ขอกลับไปจีบน้องใหม่ได้มั้ย<br>
-พี่อยากกลับไปอีกครั้ง ❤️
-</p>
-
-<input
-type="text"
-id="name"
-placeholder="ชื่อของคุณ">
-
-<div class="buttons">
-
-<button class="yes"
-onclick="sendAnswer('YES')">
-YES
-</button>
-
-<button class="no"
-onclick="sendAnswer('NO')">
-NO
-</button>
+    <div class="body-envelope">
+        💌 จดหมายจากคนคนนึง
+    </div>
 
 </div>
+
+<div class="card" id="card">
+
+    <div class="icon">🌹</div>
+
+    <h1 id="title"></h1>
+
+    <p id="message"></p>
+
+    <input
+        id="name"
+        placeholder="ชื่อของคุณ">
+
+    <div>
+
+        <button
+            class="yes"
+            onclick="sendAnswer('YES')">
+            YES 💖
+        </button>
+
+        <button
+            class="no"
+            onclick="sendAnswer('NO')">
+            NO 🥺
+        </button>
+
+    </div>
 
 </div>
 
