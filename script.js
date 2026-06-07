@@ -1,115 +1,93 @@
-window.addEventListener("load",()=>{
+ไฟล์ script.js
 
-const loader = document.querySelector(".loader");
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
+const music = document.getElementById("music");
 
-setTimeout(()=>{
+/*
+ใส่ Webhook ใหม่ของนายตรงนี้
+*/
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1513215007314411650/IG90uM0kAYPuVoNWsQ4lhaPEAR3TIU1ECl1j_g0pmBWO9p-TyUHDvZ59lWnsqV88dSz8";
 
-loader.classList.add("hide");
+envelope.addEventListener("click", () => {
 
-},1500);
+    envelope.style.display = "none";
+    letter.style.display = "block";
 
-});
-
-const glow = document.querySelector(".cursor-glow");
-
-document.addEventListener("mousemove",(e)=>{
-
-glow.style.left = e.clientX + "px";
-
-glow.style.top = e.clientY + "px";
+    music.play().catch(() => {});
 
 });
 
-window.addEventListener("scroll",()=>{
+function getDevice(){
 
-const scrollTop =
-document.documentElement.scrollTop;
+    const ua = navigator.userAgent;
 
-const height =
-document.documentElement.scrollHeight -
-document.documentElement.clientHeight;
+    if(ua.includes("Android")) return "Android";
+    if(ua.includes("iPhone")) return "iPhone";
+    if(ua.includes("Windows")) return "Windows";
+    if(ua.includes("Mac")) return "Mac";
 
-const scrolled =
-(scrollTop / height) * 100;
-
-document.querySelector(".progress-bar").style.width =
-scrolled + "%";
-
-});
-
-const particles =
-document.querySelector(".particles");
-
-for(let i=0;i<100;i++){
-
-const particle =
-document.createElement("span");
-
-particle.classList.add("particle");
-
-particle.style.left =
-Math.random()*100 + "%";
-
-particle.style.animationDuration =
-(Math.random()*10 + 5) + "s";
-
-particle.style.width =
-particle.style.height =
-(Math.random()*5 + 2) + "px";
-
-particles.appendChild(particle);
+    return "Unknown";
 
 }
 
-const accordions =
-document.querySelectorAll(".accordion");
+async function sendAnswer(answer){
 
-accordions.forEach(acc=>{
+    const name =
+    document.getElementById("name").value || "ไม่ระบุชื่อ";
 
-acc.addEventListener("click",()=>{
+    try{
 
-const panel =
-acc.nextElementSibling;
+        await fetch(WEBHOOK_URL,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
 
-const icon =
-acc.querySelector("span");
+                username:"💌 Letter Bot",
 
-if(panel.style.maxHeight){
+                embeds:[{
+                    title:"มีคนตอบจดหมายแล้ว",
+                    description:"ผลตอบกลับจากเว็บไซต์",
+                    color:16777215,
 
-panel.style.maxHeight = null;
+                    fields:[
+                        {
+                            name:"👤 ชื่อ",
+                            value:name,
+                            inline:true
+                        },
+                        {
+                            name:"📱 อุปกรณ์",
+                            value:getDevice(),
+                            inline:true
+                        },
+                        {
+                            name:"❤️ คำตอบ",
+                            value:answer,
+                            inline:false
+                        }
+                    ],
 
-icon.innerHTML = "+";
+                    footer:{
+                        text:"Letter Website"
+                    },
 
-}else{
+                    timestamp:new Date()
+                }]
+            })
+        });
 
-panel.style.maxHeight =
-panel.scrollHeight + "px";
+        document.querySelector(".card").innerHTML =
+        answer === "YES"
+        ? "<h1>❤️ ขอบคุณที่ให้โอกาสอีกครั้ง ❤️</h1>"
+        : "<h1>🖤 ขอบคุณที่ตอบกลับนะ 🖤</h1>";
 
-icon.innerHTML = "−";
+    }catch(err){
+
+        alert("ส่งข้อมูลไม่สำเร็จ");
+
+    }
 
 }
-
-});
-
-});
-
-AOS.init({
-
-duration:1200,
-
-once:false
-
-});
-
-VanillaTilt.init(
-
-document.querySelectorAll(".tilt"),
-
-{
-max:15,
-speed:400,
-glare:true,
-"max-glare":0.3
-}
-
-);
