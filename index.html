@@ -1,4 +1,4 @@
-ไฟล์ index.html
+index.html
 
 <!DOCTYPE html>
 <html lang="th">
@@ -8,42 +8,42 @@
 <title>จดหมายจากคนคนนึง</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="envelope" id="envelope">
-    <img src="images/cover.jpg" class="avatar">
-    <h1>จดหมายจากคนคนนึง</h1>
-    <p>คลิกเพื่อเปิดจดหมาย</p>
+<div class="petals" id="petals"></div>
+
+<div class="card">
+
+<div class="rose">🌹</div>
+
+<h1>จดหมายจากคนคนนึง</h1>
+
+<p>
+ขอกลับไปจีบน้องใหม่ได้มั้ย<br>
+พี่อยากกลับไปอีกครั้ง ❤️
+</p>
+
+<input
+type="text"
+id="name"
+placeholder="ชื่อของคุณ">
+
+<div class="buttons">
+
+<button class="yes"
+onclick="sendAnswer('YES')">
+YES
+</button>
+
+<button class="no"
+onclick="sendAnswer('NO')">
+NO
+</button>
+
 </div>
 
-<div class="letter" id="letter">
-    <div class="card">
-
-        <h1>💌</h1>
-
-        <h2>ขอกลับไปจีบน้องใหม่ได้มั้ย</h2>
-
-        <p>
-            พี่อยากกลับไปอีกครั้ง<br>
-            อยากเริ่มต้นใหม่อีกครั้ง
-        </p>
-
-        <input
-            type="text"
-            id="name"
-            placeholder="พิมพ์ชื่อของคุณ">
-
-        <div class="buttons">
-            <button class="yes" onclick="sendAnswer('YES')">YES</button>
-            <button class="no" onclick="sendAnswer('NO')">NO</button>
-        </div>
-
-    </div>
 </div>
-
-<audio id="music" loop>
-    <source src="music/song.mp3" type="audio/mpeg">
-</audio>
 
 <script src="script.js"></script>
 
