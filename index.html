@@ -1,274 +1,49 @@
+ไฟล์ index.html
+
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SCIENCE SKIN</title>
-
+<title>จดหมายจากคนคนนึง</title>
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
 </head>
-
 <body>
 
-<div id="three-container"></div>
-
-<canvas id="matrix"></canvas>
-
-<div class="loader">
-
-<div class="dna-loader"></div>
-
-<h1>SCIENCE SKIN</h1>
-
+<div class="envelope" id="envelope">
+    <img src="images/cover.jpg" class="avatar">
+    <h1>จดหมายจากคนคนนึง</h1>
+    <p>คลิกเพื่อเปิดจดหมาย</p>
 </div>
 
-<div class="cursor-glow"></div>
+<div class="letter" id="letter">
+    <div class="card">
 
-<div class="particles"></div>
+        <h1>💌</h1>
 
-<div class="progress-container">
+        <h2>ขอกลับไปจีบน้องใหม่ได้มั้ย</h2>
 
-<div class="progress-bar"></div>
+        <p>
+            พี่อยากกลับไปอีกครั้ง<br>
+            อยากเริ่มต้นใหม่อีกครั้ง
+        </p>
 
+        <input
+            type="text"
+            id="name"
+            placeholder="พิมพ์ชื่อของคุณ">
+
+        <div class="buttons">
+            <button class="yes" onclick="sendAnswer('YES')">YES</button>
+            <button class="no" onclick="sendAnswer('NO')">NO</button>
+        </div>
+
+    </div>
 </div>
 
-<button id="themeToggle">🌙</button>
-
-<div class="ai-box">
-
-<h3>AI SCIENCE ASSISTANT</h3>
-
-<p id="ai-text">
-กำลังวิเคราะห์ข้อมูลผิวหนัง...
-</p>
-
-</div>
-
-<nav>
-
-<h2>SCIENCE SKIN</h2>
-
-<ul>
-
-<li><a href="#accordion">เนื้อหา</a></li>
-
-<li><a href="#footer">ผู้จัดทำ</a></li>
-
-</ul>
-
-</nav>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>
-ผิวหนัง เกราะป้องกันของร่างกาย
-</h1>
-
-<h2>
-ผิวหนังแข็งแรง เริ่มต้นที่ตัวเรา
-</h2>
-
-<p class="creator">
-
-จัดทำโดย<br>
-
-นาย พุฒิเมธ มาลาน<br>
-
-ชั้นมัธยมศึกษาปีที่ 4/11 เลขที่ 1
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#accordion" class="btn">
-เริ่มสำรวจ
-</a>
-
-<a href="https://www.instagram.com/ameuvish?igsh=MWlheHRsNWNxbDNzcA==" target="_blank" class="ig-btn">
-Instagram ผู้จัดทำ
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="accordion-section" id="accordion">
-
-<h1 class="main-title">
-โครงสร้างของผิวหนัง
-</h1>
-
-<div class="skin-diagram">
-
-<div class="layer epidermis">
-Epidermis
-</div>
-
-<div class="layer dermis">
-Dermis
-</div>
-
-<div class="layer hypodermis">
-Hypodermis
-</div>
-
-</div>
-
-<div class="accordion-item tilt" data-aos="fade-up">
-
-<button class="accordion">
-
-1. หนังกำพร้า (Epidermis)
-
-<span>+</span>
-
-</button>
-
-<div class="panel">
-
-<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop">
-
-<p>
-
-หนังกำพร้า (Epidermis)
-เป็นชั้นผิวหนังด้านนอกสุดของร่างกาย
-ทำหน้าที่ป้องกันเชื้อโรค ฝุ่นละออง
-สารเคมี และรังสี UV จากแสงแดด
-
-ภายในมีเซลล์เมลาโนไซต์
-(Melanocytes)
-สร้างเมลานินเพื่อช่วยป้องกันรังสี UV
-และกำหนดสีผิวของมนุษย์
-
-</p>
-
-</div>
-
-</div>
-
-<div class="accordion-item tilt" data-aos="fade-up">
-
-<button class="accordion">
-
-2. หนังแท้ (Dermis)
-
-<span>+</span>
-
-</button>
-
-<div class="panel">
-
-<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop">
-
-<p>
-
-หนังแท้ (Dermis)
-เป็นชั้นที่อยู่ใต้หนังกำพร้า
-ประกอบด้วยเส้นเลือด เส้นประสาท
-ต่อมเหงื่อ และคอลลาเจน
-
-ช่วยให้ผิวแข็งแรง ยืดหยุ่น
-และสามารถรับความรู้สึกต่าง ๆ ได้
-
-</p>
-
-</div>
-
-</div>
-
-<div class="accordion-item tilt" data-aos="fade-up">
-
-<button class="accordion">
-
-3. อวัยวะที่เกี่ยวข้องกับผิวหนัง
-
-<span>+</span>
-
-</button>
-
-<div class="panel">
-
-<img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=1974&auto=format&fit=crop">
-
-<p>
-
-อวัยวะที่เกี่ยวข้องกับผิวหนัง
-(Skin Appendages)
-ได้แก่ เส้นผม เล็บ ต่อมเหงื่อ
-และต่อมไขมัน
-
-ช่วยควบคุมอุณหภูมิร่างกาย
-และรักษาความชุ่มชื้นของผิวหนัง
-
-</p>
-
-</div>
-
-</div>
-
-<div class="accordion-item tilt" data-aos="fade-up">
-
-<button class="accordion">
-
-4. การบำรุงผิวหนัง (Skin Care)
-
-<span>+</span>
-
-</button>
-
-<div class="panel">
-
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1974&auto=format&fit=crop">
-
-<p>
-
-ควรดื่มน้ำให้เพียงพอ
-พักผ่อนให้เพียงพอ
-รับประทานอาหารที่มีประโยชน์
-และทาครีมกันแดดทุกครั้งก่อนออกจากบ้าน
-
-เพื่อช่วยให้ผิวแข็งแรง
-และลดปัญหาผิวหนังต่าง ๆ
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer id="footer">
-
-<h2>SCIENCE SKIN</h2>
-
-<p>นาย พุฒิเมธ มาลาน</p>
-
-<p>ชั้นมัธยมศึกษาปีที่ 4/11 เลขที่ 1</p>
-
-<p class="foot">
-© 2026 SCIENCE SKIN WEBSITE
-</p>
-
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<audio id="music" loop>
+    <source src="music/song.mp3" type="audio/mpeg">
+</audio>
 
 <script src="script.js"></script>
 
