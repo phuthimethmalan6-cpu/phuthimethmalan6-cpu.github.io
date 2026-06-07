@@ -1,93 +1,103 @@
-ไฟล์ script.js
+/* ใส่ Webhook ใหม่ของนาย */
+const WEBHOOK_URL =
+"https://discord.com/api/webhooks/1513215007314411650/IG90uM0kAYPuVoNWsQ4lhaPEAR3TIU1ECl1j_g0pmBWO9p-TyUHDvZ59lWnsqV88dSz8";
 
-const envelope = document.getElementById("envelope");
-const letter = document.getElementById("letter");
-const music = document.getElementById("music");
+/* กุหลาบลอย */
 
-/*
-ใส่ Webhook ใหม่ของนายตรงนี้
-*/
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1513215007314411650/IG90uM0kAYPuVoNWsQ4lhaPEAR3TIU1ECl1j_g0pmBWO9p-TyUHDvZ59lWnsqV88dSz8";
+for(let i=0;i<25;i++){
 
-envelope.addEventListener("click", () => {
+const petal =
+document.createElement("div");
 
-    envelope.style.display = "none";
-    letter.style.display = "block";
+petal.className = "petal";
 
-    music.play().catch(() => {});
+petal.innerHTML = "🌹";
 
-});
+petal.style.left =
+Math.random()*100 + "%";
 
-function getDevice(){
+petal.style.animationDuration =
+(5+Math.random()*8)+"s";
 
-    const ua = navigator.userAgent;
+petal.style.opacity =
+Math.random();
 
-    if(ua.includes("Android")) return "Android";
-    if(ua.includes("iPhone")) return "iPhone";
-    if(ua.includes("Windows")) return "Windows";
-    if(ua.includes("Mac")) return "Mac";
-
-    return "Unknown";
+document
+.getElementById("petals")
+.appendChild(petal);
 
 }
 
 async function sendAnswer(answer){
 
-    const name =
-    document.getElementById("name").value || "ไม่ระบุชื่อ";
+const name =
+document.getElementById("name")
+.value || "ไม่ระบุชื่อ";
 
-    try{
+try{
 
-        await fetch(WEBHOOK_URL,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
+await fetch(WEBHOOK_URL,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
 
-                username:"💌 Letter Bot",
+username:"🌹 Love Letter",
 
-                embeds:[{
-                    title:"มีคนตอบจดหมายแล้ว",
-                    description:"ผลตอบกลับจากเว็บไซต์",
-                    color:16777215,
+embeds:[{
 
-                    fields:[
-                        {
-                            name:"👤 ชื่อ",
-                            value:name,
-                            inline:true
-                        },
-                        {
-                            name:"📱 อุปกรณ์",
-                            value:getDevice(),
-                            inline:true
-                        },
-                        {
-                            name:"❤️ คำตอบ",
-                            value:answer,
-                            inline:false
-                        }
-                    ],
+title:
+"มีคนตอบจดหมายแล้ว",
 
-                    footer:{
-                        text:"Letter Website"
-                    },
+description:
+"ผลตอบกลับจากเว็บไซต์",
 
-                    timestamp:new Date()
-                }]
-            })
-        });
+color:16724787,
 
-        document.querySelector(".card").innerHTML =
-        answer === "YES"
-        ? "<h1>❤️ ขอบคุณที่ให้โอกาสอีกครั้ง ❤️</h1>"
-        : "<h1>🖤 ขอบคุณที่ตอบกลับนะ 🖤</h1>";
+fields:[
+{
+name:"👤 ชื่อ",
+value:name,
+inline:true
+},
+{
+name:"❤️ คำตอบ",
+value:answer,
+inline:true
+},
+{
+name:"📱 อุปกรณ์",
+value:navigator.userAgent,
+inline:false
+}
+],
 
-    }catch(err){
+footer:{
+text:"Love Letter"
+},
 
-        alert("ส่งข้อมูลไม่สำเร็จ");
+timestamp:
+new Date().toISOString()
 
-    }
+}]
+})
+});
+
+document.querySelector(".card")
+.innerHTML =
+answer === "YES"
+?
+"<h1>❤️ ขอบคุณที่ให้โอกาสอีกครั้ง ❤️</h1>"
+:
+"<h1>🌹 ขอบคุณที่ตอบกลับนะ 🌹</h1>";
+
+}catch(err){
+
+alert(
+"Webhook ไม่ทำงาน หรือ URL ไม่ถูกต้อง"
+);
+
+}
 
 }
